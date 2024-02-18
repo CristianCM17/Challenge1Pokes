@@ -31,8 +31,9 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         currentIndex: _selectedIndex, //el index actual 0
         onTap: _onItemTapped, //lo que hace cuando se toca elelemento, va a cambiar de index
         iconSize: 27.0,
-        selectedColor: widget.color,
-        strokeColor: widget.color,
+        selectedColor: Colors.white,
+        strokeColor: Colors.white,
+        backgroundColor: widget.color,
         bubbleCurve: Curves.linear,
         unSelectedColor: AppConstantsColor.unSelectedTextColor,
         scaleFactor: 0.2,//tamanio de la animacion cuando es seleccionada
