@@ -5,7 +5,7 @@ import 'package:challenge1/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 
-final listCategory = ['Agua','Fuego','Planta'];
+final listCategory = ['Planta','Agua','Fuego'];
 
 final listPokes = [
   Pokes(
