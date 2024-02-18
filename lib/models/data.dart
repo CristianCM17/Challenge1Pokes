@@ -11,7 +11,7 @@ final listPokes = [
     'Bulbasaur',
     'Venusaur',
     'Clorofila',
-    'Primera generacion',
+    'GEN KANTO',
     4,
     [
       ImagePokes('assets/bul.png', AppConstantsColor.materialButtonColor),
@@ -25,7 +25,7 @@ final listPokes = [
     'Squirtle',
     'Blastoise',
     'Nado Rapido',
-    'Primera generacion',
+    'GEN KANTO',
     3,
     [
       ImagePokes('assets/squ.png', AppConstantsColor.materialButtonColor),
@@ -38,8 +38,8 @@ final listPokes = [
     Pokes(
     'Charmander',
     'Charizard',
-    'Absorve duego',
-    'Primera generacion',
+    'Absorbe fuego',
+    'GEN KANTO',
     5,
     [
       ImagePokes('assets/char.png', AppConstantsColor.materialButtonColor),

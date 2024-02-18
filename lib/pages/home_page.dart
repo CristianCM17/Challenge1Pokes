@@ -54,49 +54,60 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(36),
                     color: Colors.black,
                   ),
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal:20.0, vertical: 40 ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,//los elementos secundarios se expandirán para ajustarse al ancho máximo (en una Column) o al alto máximo (en una Row) 
-                      children: [
-                        Text(
-                          pokes.generation,
-                          style: 
-                          const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w600
+                  child: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal:20.0, vertical: 40 ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,//los elementos secundarios se expandirán para ajustarse al ancho máximo (en una Column) o al alto máximo (en una Row) 
+                          children: [
+                            Text(
+                              pokes.generation,
+                              style: 
+                              const TextStyle(
+                                color: Colors.white,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600
+                                ),
+                                ),
+                            const SizedBox(height: 8),
+                            Text(
+                              pokes.name,
+                              style: const TextStyle(
+                                fontSize: 28,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w800
+                              ),
                             ),
+                            Text(
+                              pokes.hability,
+                              style: const TextStyle(
+                                fontSize: 18,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600
+                              ),
                             ),
-                        const SizedBox(height: 8),
-                        Text(
-                          pokes.name,
-                          style: const TextStyle(
-                            fontSize: 28,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w800
-                          ),
+                            const SizedBox(height: 4),
+                            FittedBox(
+                              child: Text(
+                                '${listTitle[0]} \n ${listTitle[1]}',
+                                style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold
+                                ),
+                                ),
+                            )
+                          ],
                         ),
-                        Text(
-                          pokes.hability,
-                          style: const TextStyle(
-                            fontSize: 18,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600
-                          ),
-                        ),
-                        const SizedBox(height: 4),
-                        FittedBox(
-                          child: Text(
-                            '${listTitle[0]} \n ${listTitle[1]}',
-                            style: const TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.bold
-                            ),
-                            ),
+                      ),
+                      Positioned(
+                        child: Image(
+                          image: AssetImage(
+                            pokes.listImage[0].image
+                            ),                           
                         )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
                 );
               })
