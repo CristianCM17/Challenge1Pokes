@@ -2,6 +2,7 @@
 
 import 'package:challenge1/models/shoes.dart';
 import 'package:challenge1/utils/constants.dart';
+import 'package:flutter/material.dart';
 
 
 final listCategory = ['Agua','Fuego','Planta'];
@@ -14,10 +15,10 @@ final listPokes = [
     'GEN KANTO',
     4,
     [
-      ImagePokes('assets/bul.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/Ivys.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/vena.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/megav.png', AppConstantsColor.materialButtonColor)
+      ImagePokes('assets/bul.png', AppConstantsColor.bulbasaur),
+      ImagePokes('assets/Ivys.png', AppConstantsColor.bulbasaur),
+      ImagePokes('assets/vena.png', AppConstantsColor.bulbasaur),
+      ImagePokes('assets/megav.png', AppConstantsColor.bulbasaur)
 
     ],
   ),
@@ -28,10 +29,10 @@ final listPokes = [
     'GEN KANTO',
     3,
     [
-      ImagePokes('assets/squ.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/wart.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/Blas.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/MegaBlas.png', AppConstantsColor.materialButtonColor),
+      ImagePokes('assets/squ.png', AppConstantsColor.squirtle),
+      ImagePokes('assets/wart.png', AppConstantsColor.squirtle),
+      ImagePokes('assets/Blas.png', AppConstantsColor.squirtle),
+      ImagePokes('assets/MegaBlas.png', AppConstantsColor.squirtle),
 
     ],
   ),
@@ -42,10 +43,10 @@ final listPokes = [
     'GEN KANTO',
     5,
     [
-      ImagePokes('assets/char.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/leon.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/charizard.png', AppConstantsColor.materialButtonColor),
-      ImagePokes('assets/MegaCharizard.png', AppConstantsColor.materialButtonColor),
+      ImagePokes('assets/char.png', AppConstantsColor.charmander),
+      ImagePokes('assets/leon.png', AppConstantsColor.charmander),
+      ImagePokes('assets/charizard.png', AppConstantsColor.charmander),
+      ImagePokes('assets/MegaCharizard.png', AppConstantsColor.charmander),
 
     ],
   ),

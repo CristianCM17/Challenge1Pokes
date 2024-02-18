@@ -1,5 +1,8 @@
 import 'package:challenge1/models/data.dart';
+import 'package:challenge1/models/shoes.dart';
+import 'package:challenge1/utils/constants.dart';
 import 'package:challenge1/widgets/custom_app_bar.dart';
+import 'package:challenge1/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -48,69 +51,89 @@ class _HomePageState extends State<HomePage> {
               itemBuilder: (context,index){ //para construir cada pagina del carrusel por asi decirlo 
                 final pokes= listPokes[index]; //agarra el index del carrusel
                 final listTitle= pokes.generation.split(' ');
-                return Container(
-                  margin: const EdgeInsets.symmetric(vertical: 30),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(36),
-                    color: Colors.black,
-                  ),
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:20.0, vertical: 40 ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,//los elementos secundarios se expandirán para ajustarse al ancho máximo (en una Column) o al alto máximo (en una Row) 
-                          children: [
-                            Text(
-                              pokes.generation,
-                              style: 
-                              const TextStyle(
-                                color: Colors.white,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600
+                return Padding(
+                  padding: const EdgeInsets.only(right: 60.0),
+                  child: Transform.translate( 
+                    offset:const Offset(20, 0) ,
+                    child: LayoutBuilder( //para poder aplicalr los constraints
+                      builder: (context, constraints) {
+                        return Container(
+                          margin: const EdgeInsets.symmetric(vertical: 30),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(36),
+                            color: Colors.black,
+                          ),
+                          child: Stack(
+                            clipBehavior: Clip.none , //que pueda desbordar el container
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.symmetric(horizontal:20.0, vertical: 40 ),
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.stretch,//los elementos secundarios se expandirán para ajustarse al ancho máximo (en una Column) o al alto máximo (en una Row) 
+                                  children: [
+                                    Text(
+                                      pokes.generation,
+                                      style: 
+                                      const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w600
+                                        ),
+                                        ),
+                                    const SizedBox(height: 8),
+                                    Text(
+                                      pokes.name,
+                                      style: const TextStyle(
+                                        fontSize: 28,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w800
+                                      ),
+                                    ),
+                                    Text(
+                                      pokes.hability,
+                                      style: const TextStyle(
+                                        fontSize: 18,
+                                        color: Colors.white,
+                                        fontWeight: FontWeight.w600
+                                      ),
+                                    ),
+                                    const SizedBox(height: 4),
+                                    FittedBox(
+                                      child: Text(
+                                        '${listTitle[0]} \n ${listTitle[1]}',
+                                        style: const TextStyle(
+                                          color: Colors.grey,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                        ),
+                                    )
+                                  ],
                                 ),
-                                ),
-                            const SizedBox(height: 8),
-                            Text(
-                              pokes.name,
-                              style: const TextStyle(
-                                fontSize: 28,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w800
                               ),
-                            ),
-                            Text(
-                              pokes.hability,
-                              style: const TextStyle(
-                                fontSize: 18,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600
-                              ),
-                            ),
-                            const SizedBox(height: 4),
-                            FittedBox(
-                              child: Text(
-                                '${listTitle[0]} \n ${listTitle[1]}',
-                                style: const TextStyle(
-                                  color: Colors.grey,
-                                  fontWeight: FontWeight.bold
-                                ),
-                                ),
-                            )
-                          ],
-                        ),
-                      ),
-                      Positioned(
-                        child: Image(
-                          image: AssetImage(
-                            pokes.listImage[0].image
-                            ),                           
-                        )
-                      )
-                    ],
+                              Positioned(
+                                top: constraints.maxHeight * 0.2,
+                                left: constraints.maxWidth * 0.1,
+                                right: - constraints.maxWidth * 0.16,
+                                bottom: constraints.maxHeight * 0.1 ,
+                                child: Image(
+                                  image: AssetImage(
+                                    pokes.listImage[0].image
+                                    ),                           
+                                )
+                              )
+                            ],
+                          ),
+                        );
+                      }
+                    ),
                   ),
                 );
               })
+              ),
+              Container(
+                height: 70,
+                padding: EdgeInsets.all(5),
+                child: CustomBottomBar(color: listPokes[0].listImage[0].color,),
               )
         ],
       ),

@@ -4,7 +4,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomBottomBar extends StatefulWidget {
-  const CustomBottomBar({super.key});
+  final Color color; // Nuevo parámetro
+   const CustomBottomBar({
+    Key? key,
+    required this.color, // Agregar el nuevo parámetro al constructor
+  }) : super(key: key);
 
   @override
   State<CustomBottomBar> createState() => _CustomBottomBarState();
@@ -19,6 +23,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
     });
   }
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,6 +31,8 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         currentIndex: _selectedIndex, //el index actual 0
         onTap: _onItemTapped, //lo que hace cuando se toca elelemento, va a cambiar de index
         iconSize: 27.0,
+        selectedColor: widget.color,
+        strokeColor: widget.color,
         bubbleCurve: Curves.linear,
         unSelectedColor: AppConstantsColor.unSelectedTextColor,
         scaleFactor: 0.2,//tamanio de la animacion cuando es seleccionada
