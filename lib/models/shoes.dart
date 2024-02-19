@@ -5,9 +5,11 @@ class ImagePokes{
   ImagePokes(
     this.image,
     this.color,
+    this.namepoke
   );
   final String image;
   final Color color;
+  final String namepoke;
 }
 
 class Pokes{

@@ -10,6 +10,8 @@ class AppConstantsColor {
   static const Color squirtle = Colors.blue;
   static const Color bulbasaur = Colors.green;
   static const Color charmander = Colors.orange;
+  static const Color megaCharizard = Colors.blue;
+  
 
 
 }

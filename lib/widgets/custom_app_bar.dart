@@ -1,3 +1,4 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:challenge1/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,34 +9,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       title: const Text(
-        "Discover",
+        "Pokémon",
         style: TextStyle(
           fontSize: 30,
           fontWeight: FontWeight.bold,
           color: AppConstantsColor.darkTextColor,
         ),
       ),
+     
+
       actions: [
-        IconButton(
-          onPressed: () {
-            // Acción del primer botón
-          },
-          icon: const Icon(
-            CupertinoIcons.search,
-            size: 25,
-            color: AppConstantsColor.darkTextColor,
-          ),
-        ),
-        IconButton(
-          onPressed: () {
-            // Acción del segundo botón
-          },
-          icon: const Icon(
-            Icons.shopping_bag_outlined,
-            size: 25,
-            color: AppConstantsColor.darkTextColor,
-          ),
-        ),
+       Padding(
+         padding: const EdgeInsets.only(right: 25.0),
+         child: SpinPerfect(
+          infinite: true,
+          child: Image.asset('assets/pokebola.png')),
+       )
       ],
     );
   }

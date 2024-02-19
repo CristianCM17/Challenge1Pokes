@@ -41,7 +41,7 @@ class _CustomBottomBarState extends State<CustomBottomBar> {
         borderRadius: Radius.circular(50),
         items: [
           CustomNavigationBarItem(icon: Icon(CupertinoIcons.home)),
-          CustomNavigationBarItem(icon: Icon(CupertinoIcons.shopping_cart)),
+          CustomNavigationBarItem(icon: Icon(Icons.circle_rounded)),
           CustomNavigationBarItem(icon: Icon(CupertinoIcons.person))
         ],
       ),

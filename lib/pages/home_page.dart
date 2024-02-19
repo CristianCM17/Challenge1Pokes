@@ -74,10 +74,11 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 50,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: List.generate(
                   listCategory.length,
                   (index) => Padding(
-                    padding: const EdgeInsets.only(right: 12.0),
+                    padding: const EdgeInsets.only( left: 20.0, right: 20.0),
                     child: Text(
                           listCategory[index],
                           style: TextStyle(
